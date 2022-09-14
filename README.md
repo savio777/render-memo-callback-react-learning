@@ -2,12 +2,14 @@
 
 ## memo
 
-- Pure Functional Components
-- Renders too often
-- Re-renders with same props
-- Medium to big sizes
+- Componentes funcionais puros
+- Componentes que serão renderizados várias vezes
+- Renderizaçõies com os mesmos props
+- Componentes de tamanho médio para grande
 
 ## useMemo
+
+- Evitar re-cálculos complexos sem necessidade
 
 ## useCallback
 
