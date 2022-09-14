@@ -10,7 +10,10 @@
 ## useMemo
 
 - Evitar re-cálculos complexos sem necessidade
+- Igualdade referencial
 
 ## useCallback
+
+- Resolver problemas de igualdade referencial
 
 [video](https://www.youtube.com/watch?v=NmU2nNehNNY)

@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 import Item from "./components/Item";
 
 function App() {
   const [items, setItems] = useState<string[]>([]);
   const [newItem, setNewItem] = useState("");
+  const [wishList, setWishList] = useState<string[]>([]);
 
   const addItemToList = (value?: string) => {
     if (value) {
@@ -15,9 +16,24 @@ function App() {
   };
 
   const countItemsWithOne = useMemo(() => {
-    console.log("render useMemo");
+    console.log("render quando items mudar");
     return items.filter((item) => item.includes("1")).length;
   }, [items]);
+
+  const addItemWishListWithChange = useCallback(
+    (item: string) => {
+      console.log("executa função quando mudar wishList");
+      setWishList([...wishList, item]);
+    },
+    [wishList]
+  );
+
+  const addItemWishList = useCallback((item: string) => {
+    console.log(
+      "executa função somente se for chamada, sem depender de mudança de estado"
+    );
+    setWishList((state) => [...state, item]);
+  }, []);
 
   return (
     <div>
@@ -32,7 +48,11 @@ function App() {
 
       <ul>
         {items.map((item, index) => (
-          <Item key={String(index)} title={item} />
+          <Item
+            key={String(index)}
+            title={item}
+            onAddWishList={addItemWishList}
+          />
         ))}
       </ul>
 
