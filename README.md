@@ -16,4 +16,10 @@
 
 - Resolver problemas de igualdade referencial
 
+### onde são utilizados geralmente
+
+- caso do state for array ou objeto
+- caso do componente ter várias renderizações e você não quer que determinadas funções e componentes sejam renderizados novamente
+
+
 [video](https://www.youtube.com/watch?v=NmU2nNehNNY)
